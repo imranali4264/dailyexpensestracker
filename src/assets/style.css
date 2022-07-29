@@ -29,7 +29,7 @@ body {
 
 h1 {
   letter-spacing: 1px;
-  margin: 0;
+  margin: 0 0 30px;
 }
 
 h3 {
@@ -83,11 +83,11 @@ h4 {
   margin: 5px 0;
 }
 
-.amount.plus {
+.amount.income {
   color: #2ecc71;
 }
 
-.amount.minus {
+.amount.expense {
   color: #c0392b;
 }
 
@@ -137,11 +137,11 @@ input[type='number'] {
   margin: 10px 0;
 }
 
-.list li.plus {
+.list li.income {
   border-right: 5px solid #2ecc71;
 }
 
-.list li.minus {
+.list li.expense {
   border-right: 5px solid #c0392b;
 }
 

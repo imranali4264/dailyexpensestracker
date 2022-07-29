@@ -1,19 +1,28 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addTransaction } from "../reducers/expenses";
 
 export default function AddNewTransaction() {
   const [title, setTitle] = useState("");
-  const [amount, setAmount] = useState("");
+  const [amount, setAmount] = useState(0);
+
+  const dispatch = useDispatch();
 
   const onSubmit = (e) => {
     e.preventDefault();
+    dispatch(
+      addTransaction({
+        title: title,
+        amount: +amount,
+      })
+    );
+    setTitle("");
+    setAmount(0);
   };
   return (
     <div className="container">
       <h3>Add new transaction</h3>
-      <div className="your-balance">
-        <h4>Your Balance</h4>
-        <h1>$21323</h1>
-      </div>
+
       <form onSubmit={onSubmit}>
         <div className="form-control">
           <label htmlFor="text">Text</label>
